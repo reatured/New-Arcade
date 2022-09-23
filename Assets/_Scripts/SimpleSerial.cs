@@ -9,7 +9,6 @@ public class SimpleSerial : MonoBehaviour
 {
 
     public String portName = "COM15";  // use the port name for your Arduino, such as /dev/tty.usbmodem1411 for Mac or COM3 for PC
-    public GameObject leftPaddle;
 
     private SerialPort serialPort = null; 
     private int baudRate = 115200;  // match your rate from your serial in Arduino
@@ -20,8 +19,13 @@ public class SimpleSerial : MonoBehaviour
     bool programActive = true;
     Thread thread;
 
+    public GameObject aircraft;
+    public Vector3 airPos; 
     void Start()
     {
+        
+
+        aircraft.transform.position = airPos; 
         try
         {
             serialPort = new SerialPort();
@@ -54,34 +58,34 @@ public class SimpleSerial : MonoBehaviour
         }
         Debug.Log("Thread: Stop");
     }
-
+    float verticalMovement;
+    float horizontalMovement;
+    float rotateRight;
+    float rotateUp; 
+    public float speed = 1;
+    public float forwardSpeed = 10; 
     void Update()
     {
         if (serialInput != null)
         {
             string[] strEul = serialInput.Split(';');  // parses using semicolon ; into a string array called strEul. I originally was sending Euler angles for gyroscopes
-            if (strEul.Length == 2) // only uses the parsed data if every input expected has been received. In this case, 2 inputs consisting of a button (0 or 1) and an analog values between 0 and 1023
-            {
-                if (int.Parse(strEul[1]) == 0) // if button pressed
-                {
-                   
 
-                }
-                else
-                {
-                   
+            float readout = float.Parse(strEul[0]);
+            readout = map(readout, 0f, 1023f, -4f, 4f);
+            verticalMovement = readout * Time.deltaTime * speed;
+            rotateUp = map(readout, -4f, 4f, -45f, 45f)  * Time.deltaTime * speed * -1;
 
-                }
-                float readout = float.Parse(strEul[0]);
-                readout = Mathf.Clamp(readout, 200f, 824f);
-                readout = map(readout, 200f, 824f, -4f, 4f);
-                //flip y
-                readout *= -1f;
+            readout = float.Parse(strEul[2]);
+            readout = map(readout, 0f, 1023f, -4f, 4f);
+            horizontalMovement = readout * -1 * Time.deltaTime * speed;
+            rotateRight = map(readout, -4f, 4f, -45f, 45f) * Time.deltaTime * speed;
 
-                Vector3 cPos = leftPaddle.transform.position;
-                cPos = new Vector3(cPos.x, readout, cPos.z);
-                leftPaddle.transform.position = cPos;
-            }
+
+            Debug.Log("Horizontal: " + horizontalMovement);
+            Debug.Log("Vertical: " + verticalMovement);
+            aircraft.transform.Translate(new Vector3(horizontalMovement, verticalMovement, forwardSpeed * Time.deltaTime));
+            aircraft.transform.Rotate(rotateUp, 0 , rotateRight);
+
         }
     }
 
