@@ -23942,17 +23942,7 @@ PrefabInstance:
     - target: {fileID: 488248762180333353, guid: ee0c4b73f31a628458532f7159e1ef92,
         type: 3}
       propertyPath: m_Text
-      value: 'Player 1 (Left):
-
-        Potentiometer
-
-
-        Player 2 (Right):
-
-        W
-        key: paddle up
-
-        S key: paddle down'
+      value: Use joystick to control the aircraft
       objectReference: {fileID: 0}
     - target: {fileID: 488248762414298205, guid: ee0c4b73f31a628458532f7159e1ef92,
         type: 3}
@@ -23962,12 +23952,12 @@ PrefabInstance:
     - target: {fileID: 488248762414298207, guid: ee0c4b73f31a628458532f7159e1ef92,
         type: 3}
       propertyPath: m_Text
-      value: Kyle Li
+      value: Lingyi Zhou
       objectReference: {fileID: 0}
     - target: {fileID: 488248762819265649, guid: ee0c4b73f31a628458532f7159e1ef92,
         type: 3}
       propertyPath: m_Text
-      value: SERIAL PONG
+      value: Aircraft
       objectReference: {fileID: 0}
     - target: {fileID: 488248763066014576, guid: ee0c4b73f31a628458532f7159e1ef92,
         type: 3}
@@ -24013,7 +24003,7 @@ PrefabInstance:
     - target: {fileID: 488248763714553061, guid: ee0c4b73f31a628458532f7159e1ef92,
         type: 3}
       propertyPath: m_Text
-      value: In class example
+      value: Use the joystick to drive the aircraft
       objectReference: {fileID: 0}
     - target: {fileID: 488248763994511026, guid: ee0c4b73f31a628458532f7159e1ef92,
         type: 3}
@@ -24128,7 +24118,7 @@ PrefabInstance:
     - target: {fileID: 488248763994511030, guid: ee0c4b73f31a628458532f7159e1ef92,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee0c4b73f31a628458532f7159e1ef92, type: 3}
