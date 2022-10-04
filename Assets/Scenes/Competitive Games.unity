@@ -275,7 +275,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &282851307
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1099,7 +1099,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &830562442
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1478,7 +1478,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &980921844
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1671,7 +1671,7 @@ PrefabInstance:
     - target: {fileID: 488248762180333353, guid: ee0c4b73f31a628458532f7159e1ef92,
         type: 3}
       propertyPath: m_Text
-      value: Use joystick to control the aircraft
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 488248762414298205, guid: ee0c4b73f31a628458532f7159e1ef92,
         type: 3}
@@ -1686,7 +1686,7 @@ PrefabInstance:
     - target: {fileID: 488248762819265649, guid: ee0c4b73f31a628458532f7159e1ef92,
         type: 3}
       propertyPath: m_Text
-      value: Aircraft
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 488248763066014576, guid: ee0c4b73f31a628458532f7159e1ef92,
         type: 3}
@@ -1802,7 +1802,7 @@ PrefabInstance:
     - target: {fileID: 488248763714553061, guid: ee0c4b73f31a628458532f7159e1ef92,
         type: 3}
       propertyPath: m_Text
-      value: Use the joystick to drive the aircraft
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 488248763994511026, guid: ee0c4b73f31a628458532f7159e1ef92,
         type: 3}
@@ -2178,7 +2178,7 @@ MonoBehaviour:
   hunterHealth: {fileID: 875692888}
   speed: 1
   forwardSpeed: 10
-  rotateTime: 1
+  rotateTime: 0.2
   currentState: 0
   hunterHealthMax: 10
   hunterLoseText: {fileID: 1775582756}
@@ -2289,7 +2289,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1775582757
 RectTransform:
   m_ObjectHideFlags: 0
